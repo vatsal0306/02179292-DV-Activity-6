@@ -1,98 +1,126 @@
 body {
     font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
 }
+
 svg {
     width: 512px;
     height: 512px;
     border: solid 1px black;
 }
+
 .container {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
     flex-direction: column;
+    gap: 20px;
 }
-#canvas {
-    height: 100vh;
+
+.slider {
+    margin: 10px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
+
 .main {
     display: flex;
+    gap: 20px;
 }
+
+#files_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 #files {
     height: 500px;
     font-size: 1.2em; /* Adjust the font size as needed */
-    margin: 10px; /* Add margin as needed */
+    margin: 10px;
+    width: 200px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
-/* Loading Spinner Styles */
+
+.canvas {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 #loading {
     display: none;
     font-size: 1.5em;
-    color: #333; /* Dark color for visibility */
+    color: #333;
     margin-bottom: 20px;
 }
+
 .spinner {
-    border: 8px solid #f3f3f3; /* Light gray */
-    border-top: 8px solid #3498db; /* Blue */
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #3498db;
     border-radius: 50%;
     width: 50px;
     height: 50px;
     animation: spin 1s linear infinite;
-    margin: 0 auto; /* Center the spinner */
+    margin: 0 auto;
 }
+
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
-.slider {
-    margin: 10px;
-    width: 300px;
-}
 
-/* Slider styles */
 input[type="range"] {
-    -webkit-appearance: none; /* Override default CSS styles */
-    width: 100%; /* Full width */
-    height: 8px; /* Height of the slider track */
-    border-radius: 5px; /* Rounded track */
-    background: #ddd; /* Track color */
-    outline: none; /* Remove outline */
-    opacity: 0.7; /* Slightly transparent */
-    transition: opacity .2s; /* Transition for hover effect */
+    -webkit-appearance: none;
+    width: 100%;
+    height: 8px;
+    border-radius: 5px;
+    background: #ddd;
+    outline: none;
+    opacity: 0.7;
+    transition: opacity .2s;
 }
 
 input[type="range"]:hover {
-    opacity: 1; /* Fully opaque on hover */
+    opacity: 1;
 }
 
 input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none; /* Override default thumb styles */
-    appearance: none; /* Override default thumb styles */
-    width: 20px; /* Width of the thumb */
-    height: 20px; /* Height of the thumb */
-    border-radius: 50%; /* Rounded thumb */
-    background: #3498db; /* Thumb color */
-    cursor: pointer; /* Pointer cursor on hover */
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #3498db;
+    cursor: pointer;
 }
 
 input[type="range"]::-moz-range-thumb {
-    width: 20px; /* Width of the thumb */
-    height: 20px; /* Height of the thumb */
-    border-radius: 50%; /* Rounded thumb */
-    background: #3498db; /* Thumb color */
-    cursor: pointer; /* Pointer cursor on hover */
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #3498db;
+    cursor: pointer;
 }
 
-/* Style for the noUiSlider handle */
 .noUi-handle {
-    background: #3498db; /* Same color as the threshold thumb */
-    border-radius: 50%; /* Rounded handle */
-    width: 20px; /* Width of the handle */
-    height: 20px; /* Height of the handle */
-    cursor: pointer; /* Pointer cursor on hover */
+    background: #3498db;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
 }
 
-/* Style for the noUiSlider connect element */
 .noUi-connect {
-    background: #3498db; /* Same color for the connected part */
+    background: #3498db;
 }
